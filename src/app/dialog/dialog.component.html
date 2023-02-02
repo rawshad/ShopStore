@@ -1,0 +1,43 @@
+<h1 class="heading">List your product</h1>
+
+<div mat-dialog-content>
+    <form [formGroup] = "productForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input matInput placeholder="Placeholder" formControlName = "productName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Product Catageory</mat-label>
+            <mat-select formControlName = "catageory">
+                <mat-option value="fruits">Fruits</mat-option>
+                <mat-option value="electronics">Electronics</mat-option>
+                <mat-option value="eeauty">Beauty Care</mat-option>
+                <mat-option value="clothing">Clothing</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <label for=""><h1>Product type</h1></label>
+        <mat-radio-group formControlName="type" aria-label="Select an option" class="example-radio-group">
+            <mat-radio-button *ngFor="let type of productType" value="type" class="example-radio-button">{{type}}</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input formControlName="price" matInput type="number" placeholder="Placeholder">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Add Comment</mat-label>
+            <textarea formControlName="comment" matInput name="" id="" cols="30" rows="3" placeholder="Placeholder"></textarea>
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action class="actionButtons">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" (click) = "addProduct()">Save</button>
+</div>

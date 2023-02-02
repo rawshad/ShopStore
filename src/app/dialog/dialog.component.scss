@@ -1,0 +1,28 @@
+.heading {
+    text-align: center;
+    margin-top: 10%;
+}
+mat-form-field, mat-radio-group, h1, .actionButtons {
+    width: 80%;
+    padding: 0 10%;
+    
+}
+
+.example-radio-button {
+    margin: 5px;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+  }
+
+.actionButtons {
+    display: flex;
+    justify-content: flex-end;
+}
+.actionButtons button {
+    margin-left: 10px;
+}
